@@ -1,0 +1,6 @@
+@tailwind base;
+
+@font-face {
+    font-family: 'Inter var';
+    src: url('../assets/fonts/Inter.woff2') format('woff2');
+}
