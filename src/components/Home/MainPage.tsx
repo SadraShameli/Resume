@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import Linkify from 'react-linkify';
 
 import { type IResumeSection, type IResume } from '../Resume/Types';
 import MapIcon from '../Icons/Map';
@@ -8,114 +7,92 @@ import StackIcon from '../Icons/Stack';
 import WorkBagIcon from '../Icons/WorkBag';
 import CalendarIcon from '../Icons/Calendar';
 import EducationIcon from '../Icons/Education';
+import ProfilePicture from '~/assets/img/me.jpg';
 
 export default function MainPage(resume: IResume) {
     return (
-        <Linkify
-            componentDecorator={(decoratedHref, decoratedText) => {
-                return (
-                    <Link
-                        className='border-b border-dashed border-current font-semibold hover:border-hover hover:text-hover dark:border-white'
-                        href={decoratedHref}
-                    >
-                        {decoratedText}
-                    </Link>
-                );
-            }}
-        >
-            <main className='relative z-[9999] flex flex-col xl:flex-row'>
-                <div className='mx-5 my-20 lg:m-16'>
-                    <div className='flex flex-1 flex-col items-center justify-between lg:flex-row'>
-                        <div className='flex flex-col lg:flex-row'>
-                            <div className='relative mx-auto h-28 w-28 lg:h-20 lg:w-20'>
-                                <Image
-                                    className='rounded'
-                                    src='/static/img/me.jpg'
-                                    sizes='(max-width: 1024px) 112px, (max-width: 1536px) 80px'
-                                    alt='Profile picture'
-                                    quality={100}
-                                    priority
-                                    fill
-                                />
-                            </div>
-
-                            <div className='mt-5 text-center lg:my-auto lg:ml-5 lg:pt-0 lg:text-left'>
-                                <h1 className='text-3xl font-bold'>{resume.basics.title}</h1>
-                                <p>{resume.basics.role}</p>
-                            </div>
+        <main className='relative z-[9999] flex flex-col xl:flex-row'>
+            <div className='mx-5 my-20 lg:m-16'>
+                <div className='flex flex-1 flex-col items-center justify-between lg:flex-row'>
+                    <div className='flex flex-col lg:flex-row'>
+                        <div className='relative mx-auto h-28 w-28 lg:h-20 lg:w-20'>
+                            <Image className='rounded' src={ProfilePicture} alt='Profile picture' quality={100} priority />
                         </div>
 
-                        <div className='mt-6 flex items-center justify-center gap-x-3'>
-                            {resume.basics.profiles.map((profile, index) => {
-                                return (
-                                    <Link className='h-5 w-5 hover:text-hover' href={profile.url} title={profile.title} key={index}>
-                                        {profile.icon}
-                                    </Link>
-                                );
-                            })}
+                        <div className='mt-5 text-center lg:my-auto lg:ml-5 lg:pt-0 lg:text-left'>
+                            <h1 className='text-3xl font-bold'>{resume.basics.title}</h1>
+                            <p>{resume.basics.role}</p>
                         </div>
                     </div>
 
-                    <div className='mt-16 space-y-7 divide-y border-t'>
-                        <GenerateResumeSection title='Work' icon={<WorkBagIcon />} section={resume.works} />
-
-                        <GenerateResumeSection title='Projects' icon={<StackIcon />} section={resume.projects} />
-
-                        <GenerateResumeSection title='Education' icon={<EducationIcon />} section={resume.educations} />
+                    <div className='mt-6 flex items-center justify-center gap-x-3'>
+                        {resume.basics.profiles.map((profile, index) => {
+                            return (
+                                <Link className='h-5 w-5 hover:text-hover' href={profile.url} title={profile.title} key={index}>
+                                    {profile.icon}
+                                </Link>
+                            );
+                        })}
                     </div>
                 </div>
 
-                <div className='mx-5 my-10 space-y-5 text-sm lg:m-16 lg:my-20 xl:border-l xl:pl-14'>
-                    <div>
-                        <h2 className='text-xl font-semibold '>About</h2>
-                        <p className='mt-3 whitespace-pre-line text-justify'>{resume.basics.summary}</p>
+                <div className='mt-16 space-y-7 divide-y border-t'>
+                    <GenerateResumeSection title='Work' icon={<WorkBagIcon />} section={resume.works} />
 
-                        {resume.works[0]?.location && (
-                            <Link className='mt-4 flex items-center text-[#888] hover:text-hover' href={resume.works[0].location.url}>
-                                <MapIcon className='h-5 w-5' />
-                                <span className='ml-1'>{resume.works[0].location.title}</span>
-                            </Link>
-                        )}
-                    </div>
+                    <GenerateResumeSection title='Projects' icon={<StackIcon />} section={resume.projects} />
 
-                    {resume.skills.map((skills, index) => {
-                        return (
-                            <div key={index}>
-                                <h2 className='text-xl font-semibold'>{skills.title}</h2>
-                                <div className='mt-3 space-y-3'>
-                                    {skills.keywords.map((skill, index) => {
-                                        return (
-                                            <ul className='flex' key={index}>
-                                                <li>
-                                                    <span className='mr-2'>•</span>
-                                                    {skill}
-                                                </li>
-                                            </ul>
-                                        );
-                                    })}
-                                </div>
-                            </div>
-                        );
-                    })}
+                    <GenerateResumeSection title='Education' icon={<EducationIcon />} section={resume.educations} />
+                </div>
+            </div>
 
-                    <div>
-                        <h2 className='text-xl font-semibold'>Languages</h2>
-                        <div className='mt-3 space-y-3'>
-                            {resume.languages.map((language, index) => {
-                                return (
-                                    <ul className='flex' key={index}>
-                                        <li>
+            <div className='mx-5 my-10 space-y-5 text-sm lg:m-16 lg:my-20 xl:border-l xl:pl-14'>
+                <div>
+                    <h2 className='text-xl font-semibold '>About</h2>
+                    <p className='mt-3 whitespace-pre-line text-justify'>{resume.basics.summary}</p>
+
+                    {resume.works[0]?.location && (
+                        <Link className='mt-4 flex items-center text-[#888] hover:text-hover' href={resume.works[0].location.url}>
+                            <MapIcon className='h-5 w-5' />
+                            <span className='ml-1'>{resume.works[0].location.title}</span>
+                        </Link>
+                    )}
+                </div>
+
+                {resume.skills.map((skills, index) => {
+                    return (
+                        <div key={index}>
+                            <h2 className='text-xl font-semibold'>{skills.title}</h2>
+                            <ul className='mt-3 space-y-3'>
+                                {skills.keywords.map((skill, index) => {
+                                    return (
+                                        <li key={index}>
                                             <span className='mr-2'>•</span>
-                                            {language.language} - {language.fluency}
+                                            {skill}
                                         </li>
-                                    </ul>
-                                );
-                            })}
+                                    );
+                                })}
+                            </ul>
                         </div>
+                    );
+                })}
+
+                <div>
+                    <h2 className='text-xl font-semibold'>Languages</h2>
+                    <div className='mt-3 space-y-3'>
+                        {resume.languages.map((language, index) => {
+                            return (
+                                <ul key={index}>
+                                    <li>
+                                        <span className='mr-2'>•</span>
+                                        {language.language} - {language.fluency}
+                                    </li>
+                                </ul>
+                            );
+                        })}
                     </div>
                 </div>
-            </main>
-        </Linkify>
+            </div>
+        </main>
     );
 }
 
