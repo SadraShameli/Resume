@@ -7,13 +7,15 @@ import WhatsappIcon from '~/components/Icons/Whatsapp';
 import InstagramIcon from '~/components/Icons/Instagram';
 
 const Resume: IResume = {
+    title: 'Sadra Shameli • Resume',
+    description: 'Welcome to my resume',
     basics: {
         title: 'Sadra Shameli',
         role: 'Full-Stack Web & Embedded Engineer',
         email: 'sadra.shameli1@gmail.com',
         phone: '+31685156033',
         summary:
-            'Hi, my name is Sadra Shameli.\n\nI am a Full-Stack & Embedded Engineer with two years of working experience, based in Rotterdam, the Netherlands. I use TypeScript, React and Next.js in my tech stack together with TailwindCSS, NextAuth.js, tRPC and Prisma to develop web applications. I am also experienced in Back-End Development with C# using ASP.NET, SQL Server. ',
+            'I am a Full-Stack & Embedded Engineer with two years of working experience, based in Rotterdam, the Netherlands. I use TypeScript, React and Next.js in my tech stack together with TailwindCSS, NextAuth.js, tRPC and Prisma to develop web applications. I am also experienced in Back-End Development with C# using ASP.NET, SQL Server. ',
         location: {
             title: 'Rotterdam - South Holland, The Netherlands',
             url: 'https://goo.gl/maps/v9asMxGqgKwcvwQw5',
@@ -48,24 +50,20 @@ const Resume: IResume = {
     },
     skills: [
         {
-            title: 'Development Skills',
+            title: 'Skills',
             keywords: [
-                ['HTML5', 'CSS3'],
-                ['TypeScript', 'JavaScript (ES6)'],
-                ['React', 'Prisma'],
-                ['Next.js', 'NextAuth'],
-                ['TailwindCSS', 'DaisyUI', 'MaterialUI'],
-                ['SQL Server', 'PostgreSQL'],
-                ['tRPC', 'REST'],
+                'HTML5, CSS3',
+                'TypeScript, JavaScript (ES6)',
+                'React, Prisma',
+                'Next.js, NextAuth',
+                'TailwindCSS, DaisyUI, MaterialUI',
+                'SQL Server, PostgreSQL',
+                'tRPC, REST',
             ],
         },
         {
-            title: 'Personal Skills',
-            keywords: [['Patience'], ['Empathy'], ['Flexibility'], ['Teamwork'], ['Self-Awareness'], ['Open-Mindedness'], ['Fast-Paced'], ['Problem Solving']],
-        },
-        {
             title: 'Interests',
-            keywords: [['Robotics'], ['Programming'], ['Photography'], ['Guitar'], ['Hyper Cars']],
+            keywords: ['Robotics', 'Programming', 'Photography', 'Guitar', 'Cars'],
         },
     ],
     works: [
@@ -83,7 +81,7 @@ const Resume: IResume = {
                 'Developed various IoT devices and 3D printing the casing. Intended to gather various data, such as sound recordings, loudness, temperature and humidity, air quality and RPM values. The sound recording go through IIR second-order section filtering and A-Weighting before saving. The devices are placed at different locations in Rotterdam.',
                 'Developed the back-end to process the data gathered by the devices and developed the front-end at https://geluidsvervuiling.eu, where the sound recordings and loudness values are available depending on the device and the location.',
             ],
-            skills: ['TypeScript', 'React', 'ASP.NET'],
+            skills: ['TypeScript, React, ASP.NET'],
         },
     ],
     projects: [
@@ -98,14 +96,14 @@ const Resume: IResume = {
                 'Making use of the well-proven machine learning library TensorFlow',
                 'Using threads and thread pooling for every core functionality',
             ],
-            skills: ['Python', 'C++', '3D Printing'],
+            skills: ['Python, C++, 3D Printing'],
         },
         {
             title: 'Partify',
             date: 'Jan 2023 - Present',
             url: 'https://github.com/SadraShameli/Partify',
             summary: 'Online e-commerce store',
-            skills: ['TypeScript', 'React', 'Next.js', 'NextAuth.js', 'Prisma', 'tRPC'],
+            skills: ['TypeScript, React, Next.js, NextAuth.js, Prisma, tRPC'],
         },
     ],
     educations: [{ title: 'Grotius College', date: 'Sep 2020, Present', url: 'https://www.grotiuscollege.nl', role: 'VWO - N&T', summary: '' }],

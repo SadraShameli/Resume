@@ -19,7 +19,11 @@ const config = {
                 dark: colors.zinc[900],
             },
             colors: {
-                hover: '#8b939b',
+                hover: {
+                    light: '#8b939b',
+                    DEFAULT: '#8b939b',
+                    dark: '#8b939b',
+                },
             },
             container: {
                 center: true,

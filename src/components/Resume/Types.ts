@@ -21,7 +21,7 @@ export interface IResumeBasics {
 
 export interface IResumeSkill {
     title: string;
-    keywords: string[][];
+    keywords: string[];
 }
 
 export interface IResumeSection {
@@ -41,6 +41,8 @@ export interface IResumeLanguage {
 }
 
 export interface IResume {
+    title: string;
+    description: string;
     basics: IResumeBasics;
     skills: IResumeSkill[];
     works: IResumeSection[];

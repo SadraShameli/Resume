@@ -7,8 +7,8 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Sadra S. | Resume</title>
-                <meta name='description' content='Resume of Sadra Shameli, Full-stack & embedded developer' />
+                <title>{Resume.title}</title>
+                <meta name='description' content={Resume.description} />
                 <link rel='icon' href='/favicon.ico' />
             </Head>
 
