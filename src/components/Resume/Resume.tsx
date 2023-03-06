@@ -8,7 +8,7 @@ import InstagramIcon from '~/components/Icons/Instagram';
 
 const Resume: IResume = {
     title: 'Sadra Shameli • Resume',
-    description: 'Welcome to my resume',
+    description: 'Full-Stack & Embedded Engineer',
     basics: {
         title: 'Sadra Shameli',
         role: 'Full-Stack Web & Embedded Engineer',
@@ -53,7 +53,7 @@ const Resume: IResume = {
             title: 'Skills',
             keywords: [
                 'HTML5, CSS3',
-                'TypeScript, JavaScript (ES6)',
+                'TypeScript, JavaScript',
                 'React, Prisma',
                 'Next.js, NextAuth',
                 'TailwindCSS, DaisyUI, MaterialUI',
