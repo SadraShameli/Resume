@@ -1,13 +1,25 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */
 const config = {
     content: ['./src/**/*.{ts,tsx}'],
     theme: {
+        borderRadius: {
+            DEFAULT: '0.5rem',
+        },
         extend: {
             fontFamily: {
                 sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+            },
+            borderColor: {
+                light: colors.gray[200],
+                DEFAULT: colors.gray[200],
+                dark: colors.zinc[900],
+            },
+            colors: {
+                hover: '#8b939b',
             },
             container: {
                 center: true,

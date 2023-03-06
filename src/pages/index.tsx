@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
-import { SocialIcons } from '~/components/Navigation/Content';
-import MainPage, { type IMainPageProps } from '~/components/Home/MainPage';
+import Resume from '~/components/Resume/Resume';
+import MainPage from '~/components/Home/MainPage';
 
 export default function Home() {
     return (
@@ -12,13 +12,7 @@ export default function Home() {
                 <link rel='icon' href='/favicon.ico' />
             </Head>
 
-            <MainPage {...mainPageProps} />
+            <MainPage {...Resume} />
         </>
     );
 }
-
-const mainPageProps: IMainPageProps = {
-    title: 'Sadra Shameli',
-    description: 'Full-Stack Web & Embedded Developer',
-    socialIcons: SocialIcons,
-};

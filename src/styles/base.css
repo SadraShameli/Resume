@@ -1,6 +1,10 @@
 @tailwind base;
 
 @layer base {
+    * {
+        @apply dark:border-dark;
+    }
+
     body {
         @apply text-slate-700 dark:bg-black dark:text-slate-200;
     }
