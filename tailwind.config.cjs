@@ -4,6 +4,9 @@ const colors = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */
 const config = {
+    experimental: {
+        optimizeUniversalDefaults: true,
+    },
     content: ['./src/**/*.{ts,tsx}'],
     theme: {
         borderRadius: {
