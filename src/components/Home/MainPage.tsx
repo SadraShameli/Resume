@@ -69,34 +69,36 @@ export default function MainPage(resume: IResume) {
                     return (
                         <div key={index}>
                             <h2 className='text-xl font-semibold'>{skills.title}</h2>
-                            <ul className='mt-3 space-y-3'>
+                            <div className='mt-3 space-y-3'>
                                 {skills.keywords.map((skill, index) => {
                                     return (
-                                        <div className='flex space-x-2' key={index}>
-                                            <span>•</span>
-                                            <li>{skill}</li>
-                                        </div>
+                                        <ul className='flex' key={index}>
+                                            <li>
+                                                <span className='mr-2'>•</span>
+                                                {skill}
+                                            </li>
+                                        </ul>
                                     );
                                 })}
-                            </ul>
+                            </div>
                         </div>
                     );
                 })}
 
                 <div>
                     <h2 className='text-xl font-semibold'>Languages</h2>
-                    <ul className='mt-3 space-y-3'>
+                    <div className='mt-3 space-y-3'>
                         {resume.languages.map((language, index) => {
                             return (
-                                <div className='flex space-x-2' key={index}>
-                                    <span>•</span>
+                                <ul className='flex' key={index}>
                                     <li>
+                                        <span className='mr-2'>•</span>
                                         {language.language} - {language.fluency}
                                     </li>
-                                </div>
+                                </ul>
                             );
                         })}
-                    </ul>
+                    </div>
                 </div>
             </div>
         </main>
