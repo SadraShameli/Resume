@@ -15,7 +15,7 @@ const Resume: IResume = {
         email: 'sadra.shameli1@gmail.com',
         phone: '+31685156033',
         summary:
-            'I am a Full-Stack & Embedded Engineer with two years of working experience, based in Rotterdam, the Netherlands. I use TypeScript, React and Next.js in my tech stack together with TailwindCSS, NextAuth.js, tRPC and Prisma to develop web applications. I am also experienced in Back-End Development with C# using ASP.NET, SQL Server. ',
+            'I am a Full-Stack & Embedded Engineer with two years of working experience, based in Rotterdam, the Netherlands. My tech stack consists of TypeScript, React and Next.js together with tRPC, Prisma and NextAuth.js to develop intuitive web applications. I am also experienced in developing robots and IoT devices.',
         location: {
             title: 'Rotterdam - South Holland, The Netherlands',
             url: 'https://goo.gl/maps/v9asMxGqgKwcvwQw5',
@@ -52,13 +52,12 @@ const Resume: IResume = {
         {
             title: 'Skills',
             keywords: [
-                'HTML5, CSS3',
-                'TypeScript, JavaScript',
-                'React, Prisma',
-                'Next.js, NextAuth',
-                'TailwindCSS, DaisyUI, MaterialUI',
-                'SQL Server, PostgreSQL',
-                'tRPC, REST',
+                'TypeScript, React and Next.js. Familiar with SSR, SSG and CSR.',
+                'tRPC, Prisma, NextAuth.js',
+                'TailwindCSS, DaisyUI and MaterialUI',
+                'ASP.NET, Unit testing. Familiar with REST API, Web API and MVC.',
+                'Rational databases such as PostgreSQL, SQL Server',
+                'C - C++, Python 3',
             ],
         },
         {
@@ -81,7 +80,7 @@ const Resume: IResume = {
                 'Developed various IoT devices and 3D printing the casing. Intended to gather various data, such as sound recordings, loudness, temperature and humidity, air quality and RPM values. The sound recording go through IIR second-order section filtering and A-Weighting before saving. The devices are placed at different locations in Rotterdam.',
                 'Developed the back-end to process the data gathered by the devices and developed the front-end at https://geluidsvervuiling.eu, where the sound recordings and loudness values are available depending on the device and the location.',
             ],
-            skills: ['TypeScript, React, ASP.NET'],
+            skills: ['TypeScript, React, MaterialUI, ASP.NET, SQL Server'],
         },
     ],
     projects: [
@@ -96,14 +95,14 @@ const Resume: IResume = {
                 'Making use of the well-proven machine learning library TensorFlow',
                 'Using threads and thread pooling for every core functionality',
             ],
-            skills: ['Python, C++, 3D Printing'],
+            skills: ['C++, Python, 3D Printing'],
         },
         {
             title: 'Partify',
             date: 'Jan 2023 - Present',
             url: 'https://github.com/SadraShameli/Partify',
             summary: 'Online e-commerce store',
-            skills: ['TypeScript, React, Next.js, NextAuth.js, Prisma, tRPC'],
+            skills: ['TypeScript, React, Next.js, tRPC, Prisma, NextAuth.js, PostgreSQL'],
         },
     ],
     educations: [{ title: 'Grotius College', date: 'Sep 2020, Present', url: 'https://www.grotiuscollege.nl', role: 'VWO - N&T', summary: '' }],

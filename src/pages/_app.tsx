@@ -1,8 +1,8 @@
+import Script from 'next/script';
 import { useEffect } from 'react';
 import { type AppProps } from 'next/app';
 
 import '~/styles/main.css';
-import Script from 'next/script';
 
 let reloadInterval: NodeJS.Timer;
 
