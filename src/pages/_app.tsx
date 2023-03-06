@@ -2,8 +2,11 @@ import { useEffect } from 'react';
 import { type AppProps } from 'next/app';
 
 import '~/styles/main.css';
+import Script from 'next/script';
 
 let reloadInterval: NodeJS.Timer;
+
+const GOOGLE_ANALYTICS_ID = 'G-RC2BS5NY0W';
 
 function lazyReload() {
     clearInterval(reloadInterval);
@@ -54,5 +57,15 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         void registerServiceWorker();
     }, []);
 
-    return <Component {...pageProps} />;
+    return (
+        <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`} strategy='afterInteractive' />
+            <Script id='google-analytics' strategy='afterInteractive'>
+                {`window.dataLayer = window.dataLayer || [];function gtag(){window.dataLayer.push(arguments);}
+                    gtag('js', new Date());gtag('config', '${GOOGLE_ANALYTICS_ID}');`}
+            </Script>
+
+            <Component {...pageProps} />
+        </>
+    );
 }
