@@ -11,11 +11,11 @@ const Resume: IResume = {
     description: 'Full-Stack & Embedded Engineer',
     basics: {
         title: 'Sadra Shameli',
-        role: 'Full-Stack Web & Embedded Engineer',
+        role: 'Full-Stack & Embedded Engineer',
         email: 'sadra.shameli1@gmail.com',
         phone: '+31685156033',
         summary:
-            'I am a Full-Stack & Embedded Engineer with two years of working experience, based in Rotterdam, the Netherlands. My tech stack consists of TypeScript, React and Next.js together with tRPC, Prisma and NextAuth.js to develop intuitive web applications. I am also experienced in developing robots and IoT devices.',
+            'I am Sadra Shameli. 19 y/o full-stack & embedded engineer with two years of working experience, based in Rotterdam, the Netherlands. My tech stack consists of TypeScript, React and Next.js together with tRPC, Prisma and NextAuth.js to develop intuitive web applications. I am also experienced in developing robots and IoT devices.',
         location: {
             title: 'Rotterdam - South Holland, The Netherlands',
             url: 'https://goo.gl/maps/v9asMxGqgKwcvwQw5',
