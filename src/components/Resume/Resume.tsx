@@ -54,7 +54,7 @@ const Resume: IResume = {
             keywords: [
                 'TypeScript, React and Next.js. Familiar with SSR, SSG and CSR.',
                 'tRPC, Prisma, NextAuth.js',
-                'TailwindCSS, DaisyUI and MaterialUI',
+                'Tailwind CSS, Daisy UI and Material UI',
                 'ASP.NET, Unit testing. Familiar with REST API, Web API and MVC.',
                 'Rational databases such as PostgreSQL, SQL Server',
                 'C - C++, Python 3',

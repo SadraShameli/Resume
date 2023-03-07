@@ -11,9 +11,9 @@ import ProfilePicture from '~/assets/img/me.jpg';
 
 export default function MainPage(resume: IResume) {
     return (
-        <main className='relative z-[9999] flex flex-col xl:flex-row'>
-            <div className='mx-5 my-20 lg:m-16'>
-                <div className='flex flex-1 flex-col items-center justify-between lg:flex-row'>
+        <main className='relative z-[9999] mx-auto flex max-w-9xl flex-col xl:flex-row'>
+            <div className='mx-5 lg:m-16'>
+                <div className='flex flex-1 flex-col items-center justify-between gap-x-5 lg:flex-row'>
                     <div className='flex flex-col lg:flex-row'>
                         <div className='relative mx-auto h-28 w-28 lg:h-20 lg:w-20'>
                             <Image className='rounded' src={ProfilePicture} alt='Profile picture' quality={100} priority />

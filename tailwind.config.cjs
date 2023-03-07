@@ -38,6 +38,10 @@ const config = {
                     xl: '1152px',
                 },
             },
+            maxWidth: {
+                '8xl': '90rem',
+                '9xl': '98rem',
+            },
         },
     },
     future: {
