@@ -4,7 +4,7 @@ export interface ILink {
 }
 
 export interface IProfile extends ILink {
-  icon: JSX.Element;
+  icon: React.ReactNode;
 }
 
 export interface IResumeBasics {
