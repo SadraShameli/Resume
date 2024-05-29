@@ -83,11 +83,11 @@
     }
 
     @page:first {
-      margin: 0;
+      margin: 0 0 10mm 0;
     }
 
     * {
-      break-inside: avoid-page;
+      page-break-before: avoid;
     }
   }
 }
