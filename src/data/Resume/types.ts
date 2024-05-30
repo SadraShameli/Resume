@@ -47,4 +47,5 @@ export interface IResume {
   projects: IResumeSection[];
   languages: IResumeLanguage[];
   hobbies: string[];
+  motivation?: string;
 }

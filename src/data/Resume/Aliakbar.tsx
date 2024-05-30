@@ -91,6 +91,20 @@ const ResumeAliakbar: IResume = {
     },
   ],
   hobbies: [],
+  motivation: `Dear Sir / Madam, 
+
+I am writing to express my interest in the Chemisch-fysisch analist position at RIVM.
+
+My academic background has provided me with a strong foundation in the realm of chemistry. With a Master's degree in chemistry and physical chemistry from the best university of Iran, I believe that I am a great candidate for the offered position.
+
+Besides my academic background, I've conducted many researchs in the field of chemistry, specifically Phase Transfer Catalysts and the impact of ultrasonic waves on reaction kinetics. All my researchs are published in multiple ISI articles.
+
+I am eager to contribute to the improvement of public health through my working period at RIVM. I am confident that my skills, combined with my enthusiasm for continuous learning and development, would make me a viable candidate for the offered position.
+
+Thank you for considering my application.
+
+Best regards,
+Aliakbar Shameli`,
 };
 
 export default ResumeAliakbar;

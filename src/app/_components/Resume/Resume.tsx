@@ -21,7 +21,7 @@ export default function GenerateResume({
       <div className="grid grid-cols-6">
         <div className="col-span-2 flex justify-end pr-14">
           <Image
-            className=" size-32 rounded-full object-cover"
+            className="size-32 rounded-full object-cover"
             src={profilePicture}
             alt="Profile picture"
           />
@@ -88,6 +88,8 @@ export default function GenerateResume({
       {resume.hobbies.length ? (
         <GenerateSection title="Hobbies" hobbies={resume.hobbies} />
       ) : null}
+
+      <GenerateSection title="Motivation" motivation={resume.motivation} />
     </div>
   );
 }
@@ -103,6 +105,7 @@ function GenerateSection({
   projects,
   languages,
   hobbies,
+  motivation,
 }: {
   title: string;
   items?: { title: string; item: string }[];
@@ -114,6 +117,7 @@ function GenerateSection({
   projects?: IResumeSection[];
   languages?: IResumeLanguage[];
   hobbies?: string[];
+  motivation?: string;
 }) {
   return (
     <div className="grid grid-cols-6">
@@ -237,6 +241,7 @@ function GenerateSection({
             </div>
           ))}
         </div>
+        <p className="whitespace-pre-wrap text-justify">{motivation}</p>
       </div>
     </div>
   );
