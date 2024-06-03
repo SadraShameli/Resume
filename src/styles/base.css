@@ -87,7 +87,8 @@
     }
 
     * {
-      page-break-before: avoid;
+      page-break-inside: avoid;
+      /* page-break-before: avoid; */
     }
   }
 }

@@ -3,7 +3,7 @@ import InstagramIcon from '~/components/ui/Icons/Instagram';
 import WhatsAppIcon from '~/components/ui/Icons/WhatsApp';
 import YoutubeIcon from '~/components/ui/Icons/Youtube';
 
-import { type IResume } from './types';
+import { CalculateAge, type IResume } from './types';
 
 const ResumeSadra: IResume = {
   title: 'Sadra',
@@ -14,8 +14,9 @@ const ResumeSadra: IResume = {
     lastName: 'Shameli',
     email: 'sadra.shameli1@gmail.com',
     phone: '+31 06 85156033',
-    birth: '11/12/2003',
-    summary: `Full-stack & embedded developer, based in Rijswijk, the Netherlands. My tech stack consists of TypeScript, React and Next together with tRPC, Drizzle and NextAuth. I am also experienced in building IoT devices and robots.`,
+    birth: 'Dec 2003',
+    age: CalculateAge(new Date('2003-12-11')),
+    summary: `Full-stack developer with 3 years of experience. Skilled in TypeScript, React and Next.js together with tRPC, Prisma, Drizzle and NextAuth for building type-safe apps. Skilled in TailwindCSS, Material UI and Framer Motion for making great looking UI. I am also experienced in building IoT devices.`,
     location: {
       title: 'Rijswijk, The Netherlands',
       url: '',
@@ -50,8 +51,8 @@ const ResumeSadra: IResume = {
     { title: 'Linkedin', url: 'https://linkedin.com/in/sadrashameli' },
   ],
   skills: [
-    'TypeScript ••• React ••• Next',
-    'Tailwind CSS ••• Material UI',
+    'TypeScript ••• React ••• Next.js',
+    'Tailwind CSS ••• Framer Motion',
     'tRPC ••• Drizzle & Prisma ••• NextAuth',
     'PostgreSQL ••• SQL Server',
     '3D Modeling & Printing',
@@ -68,7 +69,7 @@ const ResumeSadra: IResume = {
   research: [],
   experience: [
     {
-      title: 'Full-stack & embedded - Blue Star Planning',
+      title: 'Full-stack & IoT - Blue Star Planning',
       date: 'Dec 2021 - Jan 2023',
       location: {
         title: 'Rotterdam',

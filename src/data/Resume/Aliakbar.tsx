@@ -1,7 +1,7 @@
 import GmailIcon from '~/components/ui/Icons/Gmail';
 import WhatsAppIcon from '~/components/ui/Icons/WhatsApp';
 
-import { type IResume } from './types';
+import { CalculateAge, type IResume } from './types';
 
 const ResumeAliakbar: IResume = {
   title: '',
@@ -13,6 +13,7 @@ const ResumeAliakbar: IResume = {
     email: 'aliakbar.shameli@gmail.com',
     phone: '+31 06 41906161',
     birth: '27/01/1972',
+    age: CalculateAge(new Date('1972-01-27')),
     summary: '',
     location: {
       title: 'Rijswijk, The Netherlands',
