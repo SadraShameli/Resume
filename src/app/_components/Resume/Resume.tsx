@@ -22,7 +22,7 @@ export default function GenerateResume({
         <div className="grid grid-cols-6">
           <div className="col-span-2 flex justify-end pr-14">
             <Image
-              className="size-32 rounded-full object-cover shadow-xl"
+              className="size-32 rounded-full object-cover"
               src={profilePicture}
               alt="Profile picture"
             />
