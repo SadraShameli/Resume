@@ -87,8 +87,10 @@
     }
 
     * {
-      page-break-inside: avoid;
-      /* page-break-before: avoid; */
+      page-break-before: avoid;
+      color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      -webkit-print-color-adjust: exact !important;
     }
   }
 }

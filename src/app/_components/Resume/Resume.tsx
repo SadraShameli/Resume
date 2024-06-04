@@ -29,6 +29,7 @@ export default function GenerateResume({
               className="size-32 rounded-full object-cover"
               src={profilePicture}
               alt="Profile picture"
+              quality={1}
             />
           </div>
 
@@ -137,7 +138,7 @@ function GenerateSection({
   return (
     <div className="grid grid-cols-6">
       <div className="col-span-2 mr-14">
-        <h3 className="text-right text-sm text-muted">{title}</h3>
+        <h3 className="text-right text-sm font-semibold text-muted">{title}</h3>
       </div>
 
       <div className="col-span-4 flex flex-col justify-center">
@@ -172,11 +173,13 @@ function GenerateSection({
           <div className="grid items-center gap-10">
             {education.map((education, key) => (
               <div key={key}>
-                <h3 className="text-lg font-semibold">{education.title}</h3>
+                <h3 className="text-lg font-semibold">
+                  {education.title}
+                  {education.location ? `, ${education.location.title}` : null}
+                </h3>
 
                 <span className="text-xs font-semibold text-muted">
                   {education.date}
-                  {education.location ? `, ${education.location.title}` : null}
                 </span>
               </div>
             ))}
@@ -206,13 +209,15 @@ function GenerateSection({
           <div className="grid gap-10">
             {experience.map((experience, key) => (
               <div key={key}>
-                <h3 className="text-lg font-semibold">{experience.title}</h3>
-
-                <span className="text-xs font-semibold text-muted">
-                  {experience.date}
+                <h3 className="text-lg font-semibold">
+                  {experience.title}
                   {experience.location
                     ? `, ${experience.location.title}`
                     : null}
+                </h3>
+
+                <span className="text-xs font-semibold text-muted">
+                  {experience.date}
                 </span>
 
                 <p className="whitespace-pre-line pt-2 text-justify">
@@ -242,11 +247,13 @@ function GenerateSection({
           <div className="grid gap-10">
             {projects.map((project, key) => (
               <div key={key}>
-                <h3 className="text-lg font-semibold">{project.title}</h3>
+                <h3 className="text-lg font-semibold">
+                  {project.title}
+                  {project.location ? `, ${project.location.title}` : null}
+                </h3>
 
                 <span className="text-xs font-semibold text-muted">
                   {project.date}
-                  {project.location ? `, ${project.location.title}` : null}
                 </span>
 
                 <p className="whitespace-pre-line pt-2 text-justify ">

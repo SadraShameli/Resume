@@ -18,7 +18,7 @@ const ResumeSadra: IResume = {
     age: CalculateAge(new Date('2003-12-11')),
     summary: `Full-stack developer with 3 years of experience. Skilled in TypeScript, React and Next.js together with tRPC, Prisma, Drizzle and NextAuth for building type-safe apps. Skilled in TailwindCSS, Material UI and Framer Motion for making great looking UI. I am also experienced in building IoT devices.`,
     location: {
-      title: 'Rijswijk, The Netherlands',
+      title: 'Rijswijk - The Netherlands',
       url: '',
     },
   },
@@ -70,7 +70,7 @@ const ResumeSadra: IResume = {
   experience: [
     {
       title: 'Full-stack & IoT - Blue Star Planning',
-      date: 'Dec 2021 - Jan 2023',
+      date: 'Dec 2021 - Jan 2023 · 1 yr 1 mo',
       location: {
         title: 'Rotterdam',
         url: 'https://goo.gl/maps/v9asMxGqgKwcvwQw5',
@@ -85,6 +85,33 @@ const ResumeSadra: IResume = {
       skills: [
         'React ••• TypeScript ••• Material UI ••• ASP.NET ••• SQL Server',
       ],
+    },
+    {
+      title: 'Salesman - Gamma',
+      date: 'May 2021 - Dec 2022 · 1 yr 8 mos',
+      location: {
+        title: 'Den Haag',
+        url: 'https://maps.app.goo.gl/xWFe1zER9cE8RKBg9',
+      },
+      url: 'https://gamma.nl/',
+    },
+    {
+      title: 'Salesman - Hoogvliet',
+      date: 'Sep 2021 - Mar 2022 · 7 mos',
+      location: {
+        title: 'Rijswijk',
+        url: 'https://maps.app.goo.gl/AUQwbGpcZDWswzLHA',
+      },
+      url: 'https://hoogvliet.com',
+    },
+    {
+      title: "Delivery Driver - Domino's",
+      date: 'Jul 2020 - Dec 2020 · 6 mos',
+      location: {
+        title: 'Rijswijk',
+        url: 'https://maps.app.goo.gl/EDxYvZddBXw17z7V8',
+      },
+      url: 'https://dominos.nl/',
     },
   ],
   projects: [
@@ -119,6 +146,22 @@ const ResumeSadra: IResume = {
     },
   ],
   hobbies: ['Programming', 'Robotics', 'Photography', 'Guitar', 'Cars'],
+  cover: `Dear Sir / Madam,
+
+I am writing this to apply for the position Backend Developer at Skoon.
+
+Upon reading the job description, I noticed that you are looking for a candidate that is able to build and maintain a backend written in React.js and .NET Core.
+
+As a candidate with experience in backend development in both React.js and .NET Core at a business level, I am positive that I would be great fit for the role.
+
+During my working period at Blue Star Planning BV, I was in charge of a full-stack project where I designed IoT devices, followed by a backend using ASP.NET and Entity Framework to process and store the data, to eventually creating a frontend for displaying the data.
+
+As a personal project, I then migrated the backend to fully use React.js and Drizzle since it was more cost-effective. This is available at my website: https://sadra.nl
+
+Thank you for your time and consideration. I am looking forward to hearing from you regarding the next steps in the application process.
+
+Best regards,
+Sadra Shameli`,
 };
 
 export default ResumeSadra;
