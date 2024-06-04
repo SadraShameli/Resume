@@ -92,7 +92,7 @@ const ResumeAliakbar: IResume = {
     },
   ],
   hobbies: [],
-  motivation: `Dear Sir / Madam, 
+  cover: `Dear Sir / Madam, 
 
 I am writing to express my interest in the Chemisch-fysisch analist position at RIVM.
 

@@ -11,10 +11,14 @@ import {
 export default function GenerateResume({
   resume,
   profilePicture,
+  showCover,
 }: {
   resume: IResume;
   profilePicture: StaticImageData;
+  showCover?: boolean;
 }) {
+  if (showCover === true && !resume.cover?.length) showCover = false;
+
   return (
     <div className="mx-auto w-[210mm]">
       <div className="absolute -z-50 h-[500px] w-[210mm] bg-gradient-to-r from-orange-200 via-blue-200 to-fuchsia-200 opacity-50 blur-3xl saturate-50" />
@@ -40,59 +44,66 @@ export default function GenerateResume({
               <h1 className="text-3xl font-bold text-black">
                 {resume.basics.title}
               </h1>
-              <h2 className="text-justify font-semibold">
-                {resume.basics.summary}
-              </h2>
+              {!showCover ? (
+                <h2 className="text-justify font-semibold">
+                  {resume.basics.summary}
+                </h2>
+              ) : null}
             </div>
           </div>
         </div>
 
-        <GenerateSection
-          title="Details"
-          items={[
-            { title: `Driver license`, item: 'Yes' },
-            { title: 'Date of birth', item: resume.basics.birth },
-          ]}
-        />
+        {showCover ? (
+          <GenerateSection title="Cover Letter" cover={resume.cover} />
+        ) : (
+          <>
+            <GenerateSection
+              title="Details"
+              items={[
+                { title: `Driver license`, item: 'Yes' },
+                { title: 'Date of birth', item: resume.basics.birth },
+              ]}
+            />
 
-        {resume.links.length ? (
-          <GenerateSection
-            title="Links"
-            links={resume.links.map((link) => link.url)}
-          />
-        ) : null}
+            {resume.links.length ? (
+              <GenerateSection
+                title="Links"
+                links={resume.links.map((link) => link.url)}
+              />
+            ) : null}
 
-        {resume.skills.length ? (
-          <GenerateSection title="Skills" skills={resume.skills} />
-        ) : null}
+            {resume.skills.length ? (
+              <GenerateSection title="Skills" skills={resume.skills} />
+            ) : null}
 
-        {resume.education.length ? (
-          <GenerateSection title="Education" education={resume.education} />
-        ) : null}
+            {resume.education.length ? (
+              <GenerateSection title="Education" education={resume.education} />
+            ) : null}
 
-        {resume.research.length ? (
-          <GenerateSection title="Research" research={resume.research} />
-        ) : null}
+            {resume.research.length ? (
+              <GenerateSection title="Research" research={resume.research} />
+            ) : null}
 
-        {resume.experience.length ? (
-          <GenerateSection title="Experience" experience={resume.experience} />
-        ) : null}
+            {resume.experience.length ? (
+              <GenerateSection
+                title="Experience"
+                experience={resume.experience}
+              />
+            ) : null}
 
-        {resume.projects.length ? (
-          <GenerateSection title="Projects" projects={resume.projects} />
-        ) : null}
+            {resume.projects.length ? (
+              <GenerateSection title="Projects" projects={resume.projects} />
+            ) : null}
 
-        {resume.languages.length ? (
-          <GenerateSection title="Languages" languages={resume.languages} />
-        ) : null}
+            {resume.languages.length ? (
+              <GenerateSection title="Languages" languages={resume.languages} />
+            ) : null}
 
-        {resume.hobbies.length ? (
-          <GenerateSection title="Hobbies" hobbies={resume.hobbies} />
-        ) : null}
-
-        {resume.motivation ? (
-          <GenerateSection title="Motivation" motivation={resume.motivation} />
-        ) : null}
+            {resume.hobbies.length ? (
+              <GenerateSection title="Hobbies" hobbies={resume.hobbies} />
+            ) : null}
+          </>
+        )}
       </div>
     </div>
   );
@@ -109,7 +120,7 @@ function GenerateSection({
   projects,
   languages,
   hobbies,
-  motivation,
+  cover,
 }: {
   title: string;
   items?: { title: string; item: string }[];
@@ -121,7 +132,7 @@ function GenerateSection({
   projects?: IResumeSection[];
   languages?: IResumeLanguage[];
   hobbies?: string[];
-  motivation?: string;
+  cover?: string;
 }) {
   return (
     <div className="grid grid-cols-6">
@@ -283,7 +294,7 @@ function GenerateSection({
           </div>
         ) : null}
 
-        <p className="whitespace-pre-wrap text-justify">{motivation}</p>
+        <p className="whitespace-pre-wrap text-justify">{cover}</p>
       </div>
     </div>
   );
