@@ -39,7 +39,7 @@ export interface IResumeSection {
 
 export interface IResumeLanguage {
   title: string;
-  fluency: 'Native speaker' | 'Full Professional Proficiency';
+  fluency: 'Native speaker' | 'Professional Proficiency';
 }
 
 export interface IResume {

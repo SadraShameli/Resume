@@ -80,11 +80,11 @@ const ResumeAliakbar: IResume = {
   languages: [
     {
       title: 'English',
-      fluency: 'Full Professional Proficiency',
+      fluency: 'Professional Proficiency',
     },
     {
       title: 'Dutch',
-      fluency: 'Full Professional Proficiency',
+      fluency: 'Professional Proficiency',
     },
     {
       title: 'Persian',

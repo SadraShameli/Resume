@@ -128,17 +128,17 @@ const ResumeSadra: IResume = {
         'Utilizing the TensorFlow machine learning library',
         'Using multithreading for every core functionality',
       ],
-      skills: ['3D Printing ••• Machine Learning ••• Cpp ••• Python'],
+      skills: ['3D Printing ••• Machine Learning ••• Python ••• C++'],
     },
   ],
   languages: [
     {
       title: 'English',
-      fluency: 'Full Professional Proficiency',
+      fluency: 'Professional Proficiency',
     },
     {
       title: 'Dutch',
-      fluency: 'Full Professional Proficiency',
+      fluency: 'Professional Proficiency',
     },
     {
       title: 'Persian',

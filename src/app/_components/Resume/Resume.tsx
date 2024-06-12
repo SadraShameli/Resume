@@ -1,4 +1,4 @@
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Cog } from 'lucide-react';
 import Image, { type StaticImageData } from 'next/image';
 import Link from 'next/link';
 
@@ -142,7 +142,7 @@ function GenerateSection({
       </div>
 
       <div className="col-span-4 flex flex-col justify-center">
-        <div className="grid grid-cols-2 items-center gap-x-10 gap-y-2 text-xs">
+        <section className="grid grid-cols-2 items-center gap-x-10 gap-y-2 text-xs">
           {items?.map((item, key) => (
             <div className="flex items-center gap-x-3" key={key}>
               <h4 className="whitespace-nowrap">{item.title}</h4>
@@ -167,10 +167,10 @@ function GenerateSection({
               <h3 className="font-semibold">{skill}</h3>
             </div>
           ))}
-        </div>
+        </section>
 
         {education ? (
-          <div className="grid items-center gap-10">
+          <section className="grid items-center gap-10">
             {education.map((education, key) => (
               <div key={key}>
                 <h3 className="text-lg font-semibold">
@@ -183,13 +183,13 @@ function GenerateSection({
                 </span>
               </div>
             ))}
-          </div>
+          </section>
         ) : null}
 
         {research ? (
           <div className="grid gap-10">
             {research.map((research, key) => (
-              <div key={key}>
+              <section key={key}>
                 <h3 className="text-lg font-semibold">{research.title}</h3>
 
                 <span className="text-xs font-semibold text-muted">
@@ -200,7 +200,7 @@ function GenerateSection({
                 <p className="whitespace-pre-line pt-2 text-justify">
                   {research.summary}
                 </p>
-              </div>
+              </section>
             ))}
           </div>
         ) : null}
@@ -208,7 +208,7 @@ function GenerateSection({
         {experience ? (
           <div className="grid gap-10">
             {experience.map((experience, key) => (
-              <div key={key}>
+              <section key={key}>
                 <h3 className="text-lg font-semibold">
                   {experience.title}
                   {experience.location
@@ -238,15 +238,26 @@ function GenerateSection({
                     })}
                   </ul>
                 ) : null}
-              </div>
+
+                {experience.skills?.length ? (
+                  <div className="mt-5 flex items-center">
+                    <Cog className="size-5 shrink-0" />
+                    <ul className="ml-2">
+                      {experience.skills.map((skill, index) => {
+                        return <li key={index}>{skill}</li>;
+                      })}
+                    </ul>
+                  </div>
+                ) : null}
+              </section>
             ))}
           </div>
         ) : null}
 
         {projects ? (
-          <div className="grid gap-10">
+          <section className="grid gap-10">
             {projects.map((project, key) => (
-              <div key={key}>
+              <section key={key}>
                 <h3 className="text-lg font-semibold">
                   {project.title}
                   {project.location ? `, ${project.location.title}` : null}
@@ -256,7 +267,7 @@ function GenerateSection({
                   {project.date}
                 </span>
 
-                <p className="whitespace-pre-line pt-2 text-justify ">
+                <p className="whitespace-pre-line pt-2 text-justify">
                   {project.summary}
                 </p>
 
@@ -274,31 +285,42 @@ function GenerateSection({
                     })}
                   </ul>
                 ) : null}
-              </div>
+
+                {project.skills?.length ? (
+                  <div className="mt-5 flex items-center">
+                    <Cog className="size-5" />
+                    <ul className="ml-2">
+                      {project.skills.map((skill, index) => {
+                        return <li key={index}>{skill}</li>;
+                      })}
+                    </ul>
+                  </div>
+                ) : null}
+              </section>
             ))}
-          </div>
+          </section>
         ) : null}
 
         {languages?.length ? (
-          <div className="grid grid-cols-2 gap-10">
+          <section className="grid grid-cols-2 gap-10">
             {languages.map((language, key) => (
-              <div key={key}>
+              <section key={key}>
                 <h3 className="font-semibold">{language.title}</h3>
 
                 <span className="text-xs">{language.fluency}</span>
-              </div>
+              </section>
             ))}
-          </div>
+          </section>
         ) : null}
 
         {hobbies?.length ? (
-          <div className="grid grid-cols-2 gap-y-2">
+          <section className="grid grid-cols-2 gap-y-2">
             {hobbies.map((hobby, key) => (
-              <div key={key}>
+              <section key={key}>
                 <h3 className="font-semibold">{hobby}</h3>
-              </div>
+              </section>
             ))}
-          </div>
+          </section>
         ) : null}
 
         <p className="whitespace-pre-wrap text-justify">{cover}</p>
