@@ -1,8 +1,14 @@
 import type { Config } from 'tailwindcss';
+import { fontFamily } from 'tailwindcss/defaultTheme';
 
 const config = {
   darkMode: ['class'],
-  content: ['./src/**/*.tsx'],
+  content: [
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+  ],
   prefix: '',
   theme: {
     container: {
@@ -14,8 +20,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        orbitron: 'var(--font-orbitron)',
-        geist: 'var(--font-geist-sans)',
+        sans: ['var(--font-geist-sans)', ...fontFamily.sans],
       },
       colors: {
         border: 'hsl(var(--border))',
@@ -52,21 +57,10 @@ const config = {
           foreground: 'hsl(var(--card-foreground))',
         },
       },
-      maxWidth: {
-        '8xl': '90rem',
-        '9xl': '98rem',
-        content: '80rem',
-      },
-      margin: {
-        content: '10.25rem',
-      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
-      },
-      screens: {
-        print: { raw: 'print' },
       },
       keyframes: {
         'accordion-down': {
@@ -77,25 +71,14 @@ const config = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
-        gradient: {
-          'O%': { backgroundPosition: '0% 50%' },
-          '100%': { backgroundPosition: '100% 50%' },
-        },
-        shimmer: {
-          '100%': {
-            transform: 'translateX(100%)',
-          },
-        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        gradient: 'gradient 6s ease-out infinite',
-        pulse: 'pulse 1s ease-in 0s infinite normal none',
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('tailwindcss-animate')],
+  plugins: [require('tailwindcss-animate')],
 } satisfies Config;
 
 export default config;

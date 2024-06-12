@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useId, useState } from 'react';
-import { Checkbox } from '~/components/ui/Checkbox';
+import { Checkbox } from '~/components/ui/checkbox';
 
 export default function HomePage() {
   const [useCover, setUseCover] = useState(false);
