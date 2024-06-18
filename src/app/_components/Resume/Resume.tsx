@@ -1,4 +1,4 @@
-import { ChevronRight, Cog } from 'lucide-react';
+import { Link as LucideLink } from 'lucide-react';
 import Image, { type StaticImageData } from 'next/image';
 import Link from 'next/link';
 
@@ -22,8 +22,8 @@ export default function GenerateResume({
   return (
     <div className="mx-auto w-[210mm]">
       <div className="absolute -z-50 h-[500px] w-[210mm] bg-gradient-to-r from-orange-200 via-blue-200 to-fuchsia-200 opacity-50 blur-3xl saturate-50" />
-      <div className="my-10 grid gap-y-10 rounded-2xl border p-10 print:my-0 print:border-none text-sm">
-        <div className="grid grid-cols-6">
+      <div className="my-10 grid gap-y-7 rounded-2xl border p-10 text-sm print:my-0 print:border-none">
+        <div className="grid grid-cols-7">
           <div className="col-span-2 flex justify-end pr-14">
             <Image
               className="size-32 rounded-full object-cover"
@@ -33,7 +33,7 @@ export default function GenerateResume({
             />
           </div>
 
-          <div className="col-span-4 space-y-10">
+          <div className="col-span-5 space-y-10">
             <div className="grid gap-y-1 text-xs text-muted">
               <span>{resume.basics.location.title}</span>
               <span>
@@ -46,7 +46,7 @@ export default function GenerateResume({
                 {resume.basics.title}
               </h1>
               {!showCover ? (
-                <h2 className="text-justify font-semibold text-base">
+                <h2 className="text-justify font-semibold">
                   {resume.basics.summary}
                 </h2>
               ) : null}
@@ -77,6 +77,10 @@ export default function GenerateResume({
               <GenerateSection title="Skills" skills={resume.skills} />
             ) : null}
 
+            {resume.education.length ? (
+              <GenerateSection title="Education" education={resume.education} />
+            ) : null}
+
             {resume.research.length ? (
               <GenerateSection title="Research" research={resume.research} />
             ) : null}
@@ -90,10 +94,6 @@ export default function GenerateResume({
 
             {resume.projects.length ? (
               <GenerateSection title="Projects" projects={resume.projects} />
-            ) : null}
-
-            {resume.education.length ? (
-              <GenerateSection title="Education" education={resume.education} />
             ) : null}
 
             {resume.languages.length ? (
@@ -136,12 +136,12 @@ function GenerateSection({
   cover?: string;
 }) {
   return (
-    <div className="grid grid-cols-6">
+    <div className="grid grid-cols-7">
       <div className="col-span-2 mr-14">
-        <h3 className="text-right text-sm font-semibold text-muted">{title}</h3>
+        <h3 className="text-right text-xs font-semibold text-muted">{title}</h3>
       </div>
 
-      <div className="col-span-4 flex flex-col justify-center">
+      <div className="col-span-5 flex flex-col justify-center">
         <section className="grid grid-cols-2 items-center gap-x-10 gap-y-2 text-xs">
           {items?.map((item, key) => (
             <div className="flex items-center gap-x-3" key={key}>
@@ -170,24 +170,41 @@ function GenerateSection({
         </section>
 
         {education ? (
-          <section className="grid items-center gap-10">
+          <section className="grid items-center gap-7">
             {education.map((education, key) => (
               <div key={key}>
-                <h3 className="text-lg font-semibold">
-                  {education.title}
-                  {education.location ? `, ${education.location.title}` : null}
-                </h3>
+                <h3 className="text-lg font-semibold">{education.title}</h3>
 
-                <span className="text-xs font-semibold text-muted">
-                  {education.date}
-                </span>
+                <div className="text-xs font-semibold">
+                  <div className="flex justify-between">
+                    <span>{education.role}</span>
+                    <span className="flex justify-end">{education.date}</span>
+                  </div>
+
+                  <div className="flex items-baseline justify-between">
+                    {education.url ? (
+                      <div className="mt-1 flex items-center gap-x-1">
+                        <LucideLink className="size-3" />
+                        <Link
+                          className="border-b border-dashed border-neutral-400 font-semibold"
+                          href={education.url}
+                        >
+                          {education.url}
+                        </Link>
+                      </div>
+                    ) : null}
+                    {education.location ? (
+                      <span>{education.location.title}</span>
+                    ) : null}
+                  </div>
+                </div>
               </div>
             ))}
           </section>
         ) : null}
 
         {research ? (
-          <div className="grid gap-10">
+          <div className="grid gap-7 tracking-tight">
             {research.map((research, key) => (
               <section key={key}>
                 <h3 className="text-lg font-semibold">{research.title}</h3>
@@ -206,42 +223,56 @@ function GenerateSection({
         ) : null}
 
         {experience ? (
-          <div className="grid gap-10">
+          <div className="grid gap-y-7 tracking-tight">
             {experience.map((experience, key) => (
               <section key={key}>
-                <h3 className="text-lg font-semibold">
-                  {experience.title}
-                  {experience.location
-                    ? `, ${experience.location.title}`
-                    : null}
-                </h3>
+                <h3 className="text-lg font-semibold">{experience.title}</h3>
 
-                <span className="text-xs font-semibold text-muted">
-                  {experience.date}
-                </span>
+                <div className="text-xs font-semibold">
+                  <div className="flex justify-between">
+                    <span>{experience.role}</span>
+                    <span className="flex justify-end">{experience.date}</span>
+                  </div>
+
+                  <div className="flex items-baseline justify-between">
+                    {experience.url ? (
+                      <div className="mt-1 flex items-center gap-x-1">
+                        <LucideLink className="size-3" />
+                        <Link
+                          className="border-b border-dashed border-neutral-400 font-semibold"
+                          href={experience.url}
+                        >
+                          {experience.url}
+                        </Link>
+                      </div>
+                    ) : null}
+                    {experience.location ? (
+                      <span>{experience.location.title}</span>
+                    ) : null}
+                  </div>
+                </div>
 
                 <p className="whitespace-pre-line pt-2 text-justify">
                   {experience.summary}
                 </p>
 
-                {experience.highlights?.length ? (
-                  <ul className="mt-2 grid gap-y-3">
-                    {experience.highlights.map((highlight, index) => {
-                      return (
-                        <li className="flex text-justify" key={index}>
-                          <div className="mr-1 mt-[2px]">
-                            <ChevronRight className="size-5" />
-                          </div>
-                          {highlight}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                ) : null}
+                <div className="pl-4">
+                  {experience.highlights?.length ? (
+                    <ul className="mt-2 list-disc space-y-1">
+                      {experience.highlights.map((highlight, index) => {
+                        return (
+                          <li className="text-justify" key={index}>
+                            {highlight}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  ) : null}
+                </div>
 
                 {experience.skills?.length ? (
-                  <div className="mt-5 flex items-center">
-                    <Cog className="size-5 shrink-0" />
+                  <div className="mt-3 flex items-center text-xs font-semibold">
+                    <span>Skills:</span>
                     <ul className="ml-2">
                       {experience.skills.map((skill, index) => {
                         return <li key={index}>{skill}</li>;
@@ -255,40 +286,56 @@ function GenerateSection({
         ) : null}
 
         {projects ? (
-          <section className="grid gap-10">
+          <div className="grid gap-7 tracking-tight">
             {projects.map((project, key) => (
               <section key={key}>
-                <h3 className="text-lg font-semibold">
-                  {project.title}
-                  {project.location ? `, ${project.location.title}` : null}
-                </h3>
+                <h3 className="text-lg font-semibold">{project.title}</h3>
 
-                <span className="text-xs font-semibold text-muted">
-                  {project.date}
-                </span>
+                <div className="text-xs font-semibold">
+                  <div className="flex justify-between">
+                    <span>{project.role}</span>
+                    <span className="flex justify-end">{project.date}</span>
+                  </div>
+
+                  <div className="flex items-baseline justify-between">
+                    {project.url ? (
+                      <div className="mt-1 flex items-center gap-x-1">
+                        <LucideLink className="size-3" />
+                        <Link
+                          className="border-b border-dashed border-neutral-400 font-semibold"
+                          href={project.url}
+                        >
+                          {project.url}
+                        </Link>
+                      </div>
+                    ) : null}
+                    {project.location ? (
+                      <span>{project.location.title}</span>
+                    ) : null}
+                  </div>
+                </div>
 
                 <p className="whitespace-pre-line pt-2 text-justify">
                   {project.summary}
                 </p>
 
-                {project.highlights?.length ? (
-                  <ul className="mt-2 grid gap-y-3">
-                    {project.highlights.map((highlight, index) => {
-                      return (
-                        <li className="flex text-justify" key={index}>
-                          <div className="mr-1 mt-[2px]">
-                            <ChevronRight className="size-5" />
-                          </div>
-                          {highlight}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                ) : null}
+                <div className="pl-4">
+                  {project.highlights?.length ? (
+                    <ul className="mt-2 list-disc space-y-1">
+                      {project.highlights.map((highlight, index) => {
+                        return (
+                          <li className="text-justify" key={index}>
+                            {highlight}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  ) : null}
+                </div>
 
                 {project.skills?.length ? (
-                  <div className="mt-5 flex items-center">
-                    <Cog className="size-5" />
+                  <div className="mt-3 flex items-center text-xs font-semibold">
+                    <span>Skills:</span>
                     <ul className="ml-2">
                       {project.skills.map((skill, index) => {
                         return <li key={index}>{skill}</li>;
@@ -298,11 +345,11 @@ function GenerateSection({
                 ) : null}
               </section>
             ))}
-          </section>
+          </div>
         ) : null}
 
         {languages?.length ? (
-          <section className="grid grid-cols-2 gap-10">
+          <div className="grid grid-cols-2 gap-7">
             {languages.map((language, key) => (
               <section key={key}>
                 <h3 className="font-semibold">{language.title}</h3>
@@ -310,7 +357,7 @@ function GenerateSection({
                 <span className="text-xs">{language.fluency}</span>
               </section>
             ))}
-          </section>
+          </div>
         ) : null}
 
         {hobbies?.length ? (
