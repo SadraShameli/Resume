@@ -22,7 +22,7 @@ export default function GenerateResume({
   return (
     <div className="mx-auto w-[210mm]">
       <div className="absolute -z-50 h-[500px] w-[210mm] bg-gradient-to-r from-orange-200 via-blue-200 to-fuchsia-200 opacity-50 blur-3xl saturate-50" />
-      <div className="my-10 grid gap-y-7 rounded-2xl border p-10 text-sm print:my-0 print:border-none">
+      <div className="my-10 grid gap-y-5 rounded-2xl border p-10 text-sm print:my-0 print:border-none">
         <div className="grid grid-cols-7">
           <div className="col-span-2 flex justify-end pr-14">
             <Image
@@ -142,7 +142,7 @@ function GenerateSection({
       </div>
 
       <div className="col-span-5 flex flex-col justify-center">
-        <section className="grid grid-cols-2 items-center gap-x-10 gap-y-2 text-xs">
+        <section className="grid grid-cols-2 items-center gap-x-5 gap-y-2 text-xs">
           {items?.map((item, key) => (
             <div className="flex items-center gap-x-3" key={key}>
               <h4 className="whitespace-nowrap">{item.title}</h4>
@@ -170,12 +170,14 @@ function GenerateSection({
         </section>
 
         {education ? (
-          <section className="grid items-center gap-7">
+          <section className="grid items-center gap-5">
             {education.map((education, key) => (
               <div key={key}>
-                <h3 className="text-lg font-semibold">{education.title}</h3>
+                <h3 className="text-lg font-semibold leading-none">
+                  {education.title}
+                </h3>
 
-                <div className="text-xs font-semibold">
+                <div className="mt-1 text-xs font-semibold">
                   <div className="flex justify-between">
                     <span>{education.role}</span>
                     <span className="flex justify-end">{education.date}</span>
@@ -204,12 +206,14 @@ function GenerateSection({
         ) : null}
 
         {research ? (
-          <div className="grid gap-7 tracking-tight">
+          <div className="grid gap-5 tracking-tight">
             {research.map((research, key) => (
               <section key={key}>
-                <h3 className="text-lg font-semibold">{research.title}</h3>
+                <h3 className="text-lg font-semibold leading-none">
+                  {research.title}
+                </h3>
 
-                <span className="text-xs font-semibold text-muted">
+                <span className="mt-1 text-xs font-semibold text-muted">
                   {research.date}
                   {research.location ? `, ${research.location.title}` : null}
                 </span>
@@ -223,12 +227,14 @@ function GenerateSection({
         ) : null}
 
         {experience ? (
-          <div className="grid gap-y-7 tracking-tight">
+          <div className="grid gap-y-5 tracking-tight">
             {experience.map((experience, key) => (
               <section key={key}>
-                <h3 className="text-lg font-semibold">{experience.title}</h3>
+                <h3 className="text-lg font-semibold leading-none">
+                  {experience.title}
+                </h3>
 
-                <div className="text-xs font-semibold">
+                <div className="mt-1 text-xs font-semibold">
                   <div className="flex justify-between">
                     <span>{experience.role}</span>
                     <span className="flex justify-end">{experience.date}</span>
@@ -286,12 +292,14 @@ function GenerateSection({
         ) : null}
 
         {projects ? (
-          <div className="grid gap-7 tracking-tight">
+          <div className="grid gap-5 tracking-tight">
             {projects.map((project, key) => (
               <section key={key}>
-                <h3 className="text-lg font-semibold">{project.title}</h3>
+                <h3 className="text-lg font-semibold leading-none">
+                  {project.title}
+                </h3>
 
-                <div className="text-xs font-semibold">
+                <div className="mt-1 text-xs font-semibold">
                   <div className="flex justify-between">
                     <span>{project.role}</span>
                     <span className="flex justify-end">{project.date}</span>
@@ -349,7 +357,7 @@ function GenerateSection({
         ) : null}
 
         {languages?.length ? (
-          <div className="grid grid-cols-2 gap-7">
+          <div className="flex justify-between">
             {languages.map((language, key) => (
               <section key={key}>
                 <h3 className="font-semibold">{language.title}</h3>
@@ -364,7 +372,7 @@ function GenerateSection({
           <section className="grid grid-cols-2 gap-y-2">
             {hobbies.map((hobby, key) => (
               <section key={key}>
-                <h3 className="font-semibold">{hobby}</h3>
+                <h3 className="font-semibold leading-none">{hobby}</h3>
               </section>
             ))}
           </section>
