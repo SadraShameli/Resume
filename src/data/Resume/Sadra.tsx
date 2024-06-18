@@ -116,6 +116,19 @@ const ResumeSadra: IResume = {
   ],
   projects: [
     {
+      title: 'sadra.nl',
+      date: 'April 2024 - Present',
+      url: 'https://github.com/SadraShameli/sadra.nl',
+      summary: 'Full-stack personal portfolio',
+      highlights: [
+        'Type-safe front-end and back-end using Typescript & N',
+        'Ability to manually control using a PS5 or PS4 controller',
+        'Utilizing the TensorFlow machine learning library',
+        'Using multithreading for every core functionality',
+      ],
+      skills: ['3D Printing ••• Machine Learning ••• Python ••• C++'],
+    },
+    {
       title: 'Project A.I.',
       date: 'Sep 2022 - Dec 2022',
       url: 'https://github.com/SadraShameli/ProjectAI',
@@ -145,7 +158,7 @@ const ResumeSadra: IResume = {
       fluency: 'Native speaker',
     },
   ],
-  hobbies: ['Programming', 'Robotics', 'Photography', 'Guitar', 'Cars'],
+  hobbies: ['Robotics', 'Photography', 'Guitar', 'Cars'],
   cover: `Dear Sir / Madam,
 
 I am writing this to apply for the position Backend Developer at Skoon.

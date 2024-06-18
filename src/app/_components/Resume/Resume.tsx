@@ -22,7 +22,7 @@ export default function GenerateResume({
   return (
     <div className="mx-auto w-[210mm]">
       <div className="absolute -z-50 h-[500px] w-[210mm] bg-gradient-to-r from-orange-200 via-blue-200 to-fuchsia-200 opacity-50 blur-3xl saturate-50" />
-      <div className="my-10 grid gap-y-10 rounded-2xl border p-10 print:my-0 print:border-none">
+      <div className="my-10 grid gap-y-10 rounded-2xl border p-10 print:my-0 print:border-none text-sm">
         <div className="grid grid-cols-6">
           <div className="col-span-2 flex justify-end pr-14">
             <Image
@@ -46,7 +46,7 @@ export default function GenerateResume({
                 {resume.basics.title}
               </h1>
               {!showCover ? (
-                <h2 className="text-justify font-semibold">
+                <h2 className="text-justify font-semibold text-base">
                   {resume.basics.summary}
                 </h2>
               ) : null}
@@ -77,10 +77,6 @@ export default function GenerateResume({
               <GenerateSection title="Skills" skills={resume.skills} />
             ) : null}
 
-            {resume.education.length ? (
-              <GenerateSection title="Education" education={resume.education} />
-            ) : null}
-
             {resume.research.length ? (
               <GenerateSection title="Research" research={resume.research} />
             ) : null}
@@ -94,6 +90,10 @@ export default function GenerateResume({
 
             {resume.projects.length ? (
               <GenerateSection title="Projects" projects={resume.projects} />
+            ) : null}
+
+            {resume.education.length ? (
+              <GenerateSection title="Education" education={resume.education} />
             ) : null}
 
             {resume.languages.length ? (
