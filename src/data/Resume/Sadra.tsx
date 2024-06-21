@@ -195,22 +195,29 @@ const ResumeSadra: IResume = {
     },
   ],
   hobbies: ['Robotics', 'Photography', 'Guitar', 'Cars'],
-  cover: `Dear Sir / Madam,
+  cover: `Rijswijk, 21 juni 2024
 
-I am writing this to apply for the position Backend Developer at Skoon.
+Betref: Banner Developer bij Coolblue
 
-Upon reading the job description, I noticed that you are looking for a candidate that is able to build and maintain a backend written in React.js and .NET Core.
+Geachte heer/mevrouw,
 
-As a candidate with experience in backend development in both React.js and .NET Core at a business level, I am positive that I would be great fit for the role.
+Deze week kwam ik op Linkedin uw vacature tegen voor Banner Developer bij Coolblue. De vacature sprak mij direct aan, aangezien deze perfect aansluit bij mijn passie voor webontwikkeling. Hierdoor besloot ik om deze motivatiebrief te schrijven. Ik leg u graag uit wat mij zo aanspreekt in deze functie en hoe ik een toegevoegde waarde kan zijn voor Coolblue.
 
-During my working period at Blue Star Planning BV, I was in charge of a full-stack project where I designed IoT devices, followed by a backend using ASP.NET and Entity Framework to process and store the data, to eventually creating a frontend for displaying the data.
+Als een kandidaat met ervaring in full-stack development met Typescript, React.js en TailwindCSS op zakelijk niveau, heb ik vol vertrouwen dat ik uitstekend zou passen in deze rol.
 
-As a personal project, I then migrated the backend to fully use React.js and Drizzle since it was more cost-effective. This is available at my website: https://sadra.nl
+Tijdens mijn werkperiode bij Blue Star Planning B.V. was ik verantwoordelijk voor een full-stack project waarbij ik IoT-devices ontwierp. Daarnaast ontwikkelde ik een backend met ASP.NET en Entity Framework om de data te kunnen verwerken en opslaan. Vervolgens had ik een frontend gemaakt met Typescript, React.js en TailwindCSS voor het weergeven van de data.
 
-Thank you for your time and consideration. I am looking forward to hearing from you regarding the next steps in the application process.
+Voor een persoonlijk project heb ik de backend volledig gemigreerd naar Next.js en Drizzle, aangezien dit kosteneffectiever was. Het project kunt u terugvinden op mijn website: https://sadra.nl
 
-Best regards,
+Verder kunt u mijn GitHub profiel bekijken om meer te weten over mijn projecten en mijn programmeerstijl: https://github.com/sadrashameli
+
+Ik kijk graag uit naar de volgende stappen in het sollicitatieproces en een kennismakingsgesprek.
+
+Hartelijk dank voor uw tijd en aandacht.
+
+Met vriendelijke groet,
 Sadra Shameli`,
 };
 
 export default ResumeSadra;
+"De vacature wekte zo'n enthousiasme bij mij op dat ik direct besloot om deze motivatiebrief te schrijven. Graag licht ik toe wat mij aantrekt in deze functie en hoe ik van waarde kan zijn voor uw organisatie."
