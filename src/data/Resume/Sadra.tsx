@@ -16,7 +16,7 @@ const ResumeSadra: IResume = {
     phone: '+31 06 85156033',
     birth: 'Dec 2003',
     age: CalculateAge(new Date('2003-12-11')),
-    summary: `Full-stack developer with 3 years of experience. Proficient in TypeScript, React and Next.js with tRPC, React Query, Prisma, Drizzle and NextAuth for building type-safe backends. Skilled in Tailwind CSS and Framer Motion for designing modern UI/UX. I am also experienced in designing IoT devices.`,
+    summary: `Full-stack developer with 2 years of experience. Proficient in TypeScript, React and Next.js with tRPC, React Query, Prisma, Drizzle and NextAuth for building type-safe backends. Skilled in Tailwind CSS and Framer Motion for designing modern UI/UX. I am also experienced in designing IoT devices.`,
     location: {
       title: 'Rijswijk - The Netherlands',
       url: '',
