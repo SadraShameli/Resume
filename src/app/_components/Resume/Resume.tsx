@@ -29,7 +29,7 @@ export default function GenerateResume({
               className="size-32 rounded-full object-cover"
               src={profilePicture}
               alt="Profile picture"
-              quality={1}
+              quality={100}
             />
           </div>
 
